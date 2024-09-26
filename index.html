@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amazing World of CrispyP!!</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #1DB954;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            background-color: #021526;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            height: 50px;
+        }
+
+        header h1 {
+    	   margin: 0;
+    	   position: absolute;
+     	   left: 50%;
+    	   transform: translateX(-50%);
+    	   font-size: 26px;
+    	   font-weight: bold;
+    	   color: white;
+        }
+
+        header .logo {
+   	    height: 40px;
+   	    width: 40px;
+   	    border-radius: 50%;
+    	    object-fit: cover;
+   	    margin-left: auto;
+	    margin-right: 40px;
+	}
+        .sidebar {
+            width: 220px;
+            background-color: #040404;
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover {
+            background-color: #282828;
+            border-radius: 4px;
+        }
+
+        .content {
+            margin-left: 240px;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #181818;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: calc(33% - 40px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .more-info {
+            display: none;
+            margin-top: 10px;
+            background-color: #282828;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .card.active .more-info {
+            display: block;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #181818;
+            position: relative;
+            width: 100%;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin-left: 0;
+            }
+
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to my Personal Website!</h1>
+    <img src="images\331713646_575245014518891_3619782633109672054_n.jpg"" alt="Logo" class="logo"> <!-- Add your logo here -->
+</header>
+
+<aside class="sidebar">
+    <a onclick="showSection('profile-info')">Profile</a>
+    <a onclick="showSection('playlist-info')">Playlists</a>
+    <a onclick="showSection('favorites-info')">Favorites</a>
+</aside>
+
+<main class="content" id="main-content">
+
+    <div id="profile-info" class="info-section" style="display: none;">
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/355014412_939719350597918_2164510480821395281_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEooD4VqpItGIdiToSj4-H2CnomZ0kfulAKeiZnSR-6UGA_YdhaPG2gI2EqmQdLfTYztonep19w8fhwMoeMlv8A&_nc_ohc=dYQUqcNhYmUQ7kNvgF1HrGL&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=Ar95NVpf6NKedkWPeN9ayvA&oh=00_AYA-UxYto7o9ut0aGpfoaCMorFHg30AIPeXtQ6IERMKZHQ&oe=66F867F4" alt="Profile Picture">
+            <h3>About Myself</h3>
+            <div class="more-info">
+                <p>Hi! My name is Kent Joseph Gayanilo Nifras. I am from Sandionisio Subd. Brgy. Granada and currently living at Brgy. Santol Mandalagan. I was born on Oct. 19, 2003 and I 		am 20 yrs old going 21 this October. I have worked at Iloilo at the company called Inspiro Relia. Inc. as a CSR (Customer Service Representative). I am a student at 			National University and currently studying Bachelor of Computer Science. </p>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://media.wired.com/photos/61f48f02d0e55ccbebd52d15/3:2/w_2400,h_1600,c_limit/Gear-Rant-Game-Family-Plans-1334436001.jpg">
+            <h3>My Hobbies</h3>
+            <div class="more-info">
+                <p>My hobbies are watching anime and playing games. I started watching anime when I was in grade 7 when my classmate introduce it to me, since then I've watched a lot of 		anime, some are great story-driven and some are very interesting.. (👀). But one of my most favorite hobby is playing games. Gaming is my favorite hobby. It’s like 			stepping into another world where I can explore amazing landscapes, team up with friends, or dive into epic stories. Whether I’m battling it out in a multiplayer match or 		just chilling with a single-player game, there’s always something new to experience. I love the challenge of leveling up my skills and finding cool loot. Plus, it’s a great 		way to connect with friends and share some laughs. Every gaming session feels like an adventure, and I’m always ready for the next one! </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="playlist-info" class="info-section" style="display: none;">
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t39.30808-6/325215026_691130642548836_2674687937886446602_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeFqAsRzXUoKO_TZiNQ_69PcpBtu8fva-emkG27x-9r56UpEL3s8gofc4JNskg_AjGTk0oQxcTACSYf3lEa5tRtQ&_nc_ohc=KrQjwFErzTsQ7kNvgGfQmhs&_nc_ht=scontent.fmnl8-5.fna&oh=00_AYAkLfVn4uFsO0mm8EiuwnmkpInfS7S8vl6muwHqoandjA&oe=66F885B7" alt="Family Picture">
+            <h3>About my Family</h3>
+            <div class="more-info">
+                <p>These are my family. I am the youngest and the age difference of my brother is 10 years apart. These are some information about them:</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://scontent.fmnl40-1.fna.fbcdn.net/v/t39.30808-6/458380134_2282069678793987_220598324837061559_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE92IQI1jjMuQK0DZbIKlfRR2-gomkYWW5Hb6CiaRhZblWbKuwdLCu8VCb2O9VpzGaJzi1hcYkTmJQEjpspBneE&_nc_ohc=Q2hxwfMBC7kQ7kNvgGxJT70&_nc_ht=scontent.fmnl40-1.fna&_nc_gid=Afl1H9Xn1dmqqP0T5NjJHEg&oh=00_AYDcSPyDDGRw9mG_E7p5P4orywAZLF0tQ411iaduJTWqmQ&oe=66F88DC6">
+            <h3>Father</h3>
+            <div class="more-info">
+                <p>This is my Dad. His name is Celestino Inventor Nifras Jr. He works at DepEd as Senior Education Specialist in Social Mobilization (SEPS in SocMob). He's has a rice farm 		in Kabankalan and his side hustle is selling and delivering rice to his customers.</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://scontent.fmnl40-1.fna.fbcdn.net/v/t39.30808-6/411716360_1887201705015811_494031189682746250_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeF8JjYJCH-bRtcqLQ_P7v5_I4c2l9e86MsjhzaX17zoyxUr1J7omGLoegs9QDipr8yC0inCuofxXEhdiAIxIqV9&_nc_ohc=yDSEDP6ANakQ7kNvgHRqJdd&_nc_ht=scontent.fmnl40-1.fna&oh=00_AYBFLHAzJ9VCkrR1KcPrxL7__TjfoK9B0g_5AwmaErHUpA&oe=66F88024">
+            <h3>Mother</h3>
+            <div class="more-info">
+                <p>This is my Mom. Her name is Jocelyn Gayanilo Nifras and she works as a teacher at Crispino V. Ramos Elementary School in Taculing. She is called a "wanderlust" which means she loves to travel and she visited many countries and she's planning to go and travel to Thailand this December. </p>
+            </div>
+        </div>
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="https://scontent.fmnl8-5.fna.fbcdn.net/v/t1.6435-9/35382925_2446570758701963_2021818587160772608_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeHUC08BHVONQhz_nhsHt7MWbLy7_yonKq1svLv_KicqrYhSZWFENPR4-ysUEJiRX6jzBj2sbivC0qzpdpZb59cf&_nc_ohc=_WzXTQAvbKIQ7kNvgH9t_j1&_nc_ht=scontent.fmnl8-5.fna&_nc_gid=AdyWXksnopx6NSmvdhdJFJy&oh=00_AYCZMrxQDmg0kCnCxtijZXq1G3ypKdmv4kLsXL1MOTX1Tg&oe=6719FF7B">
+            <h3>Brother</h3>
+            <div class="more-info">
+                <p>This is my Manong(brother). He's Jan Michael Gayanilo Nifras and he is a former seafarer(seaman) and now currently lives and works at North Carolina, USA with his wife Claire Nalang Nifras and his son Juancho Emmanuel Nalang Nifras.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="favorites-info" class="info-section" style="display: none;">
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="images/289412984_798801807962952_1831133318821374200_n.jpg">
+            <h3>Mariah Guinevere Retiban</h3>
+            <div class="more-info">
+                <p>This is my lovable angelic piece of perfect. Her name is Mariah Guinevere Maloto Retiban. She is 22 yrs old and her birthday is on April 22. We are together for 7 years going 8 years this December. Her hobbies are watching movies, graphic designing, playing games and her favorite: Eating. He would do everything together like watching movies and doing work and etc. We are basically like Yin and Yang (sya ang itom ako ang puti hehe..) unseparable.</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <img src="images/_MG_0214 sc.jpg">
+            <h3>Malliah Gueniken R. Nifras</h3>
+            <div class="more-info">
+                <p>This is me and your Manang Gwen's child. Her name is Milliah Gueniken Retiban Nifras. She is 1 yr and 4 months old and was born on May 24, 2023. Her job is very important and she takes her job very seriously. She works like a call center agent because she's always awake at night and she doesn't like her employees sleep during work so she keeps waking us up all night. She's a very bossy child as well. Whenever I tell her to that what her doing is wrong she always gets mad at me and proceeds to do it anyways. She always interrupts me and wants to cuddle and give kisses to her. It doesn't matter wether I am working at my desk, watching tv, and even on the toilet she always knocks and wants to in with me. We would always play and ends up fighting in the end. We would always prank her mom like whenever her mom is laying on the bed, I would place her on top of her mom and she proceeds to ride her like a horse. Long story short, I love her and I hope she never change (Hopefully).</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 My Personal Website | Built by Kent Joseph Nifras</p>
+    <p>
+        <a href="mailto:kjnifras@gmail.com">Email</a> |
+        <a href="https://www.facebook.com/kent.nifras" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/kenjo_xv/" target="_blank">Instagram</a> |
+        <a href="https://www.tiktok.com/@lemon_mellow21" target="_blank">Tiktok</a>
+    </p>
+</footer>
+
+<script>
+    // Function to toggle album info
+    function toggleInfo(card) {
+        card.classList.toggle('active');
+    }
+
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.info-section');
+        sections.forEach(section => section.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+
+        // Reset all cards to not active
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.classList.remove('active'));
+    }
+
+    // Show the profile section by default
+    document.addEventListener("DOMContentLoaded", () => {
+        showSection('profile-info');
+    });
+</script>
+
+</body>
+</html>
